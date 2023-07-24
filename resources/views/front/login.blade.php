@@ -14,7 +14,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="../../../"/>
-		<title>Selamat Datang di Perpustakaan Online Kami</title>
+		<title>Selamat Datang di Restoran Online Kami</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -43,7 +43,7 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Root-->
 		<div class="d-flex flex-column flex-root" id="kt_app_root">
 			<!--begin::Page bg image-->
-			<style>body { background-image: url('{{ url("template") }}/assets/media/auth/bgperpustakaan.jpeg'); } [data-bs-theme="dark"] body { background-image: url('{{ url("template") }}/assets/media/auth/bgperpustakaan.jpeg'); }</style>
+			<style>body { background-image: url('{{ url("template") }}/assets/media/auth/bgrestoran.jpg'); } [data-bs-theme="dark"] body { background-image: url('{{ url("template") }}/assets/media/auth/bgrestoran.jpg'); }</style>
 			<!--end::Page bg image-->
 			<!--begin::Authentication - Sign-in -->
 			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
@@ -58,8 +58,8 @@ License: For each use you must have a valid license purchased only from above li
                         <h3 style="color: whitesmoke">{{ env("APP_NAME") }}</h3>
 						<!--end::Logo-->
 						<!--begin::Title-->
-						<h4 class="text-white fw-normal m-0" >Perpustakaan</h4>
-						<img alt="Logo" src="{{ url("template") }}/assets/media/logos/perpus.png" />
+						<h4 class="text-white fw-normal m-0" >Restaurant</h4>
+						<img alt="Logo" src="{{ url("template") }}/assets/media/logos/logoresto.jpeg" />
                         @if ($message = Session::get('message'))
                         <h4 class="text-white fw-normal m-0">{{$message}}</h4>
                         @endif

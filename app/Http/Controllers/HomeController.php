@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Buku;
-use App\Models\Kategori_buku; 
+use App\Models\Menu;
+use App\Models\Jenis_menu; 
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -30,9 +30,9 @@ class HomeController extends Controller
         $pages = 'home';
         $cartItems = \Cart::getContent(); 
 
-        $buku = Buku::all();
-        $kategori_buku = Kategori_buku::all();
-        return view('home',compact('title', 'pages', 'kategori_buku','buku','cartItems'))
+        $menu = Menu::all();
+        $jenis_menu = Jenis_menu::all();
+        return view('home',compact('title', 'pages', 'jenis_menu','menu','cartItems'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 }
