@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-# perpustakaan
+# Restaurant
 =======
-## LARALIBRARY
+## LARARESTO
 
-Laralibrary base on Larapicker 8 skeleton
+Lararesto base on Larapicker 8 skeleton
 
 
 ![alt text](https://github.com/suryo/laravel8-metronic-1/blob/master/public/doc/crud_builder.jpg?raw=true)
