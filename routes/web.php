@@ -93,8 +93,8 @@ Route::group(['middleware' => ['auth']], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/fbuku', [App\Http\Controllers\front\FrontBukuController::class, 'index'])->name('fbuku');
-Route::get('/fkategoribuku', [App\Http\Controllers\front\FrontKategoriBukuController::class, 'index'])->name('fkategoribuku');
+Route::get('/fmenu', [App\Http\Controllers\front\FrontMenuController::class, 'index'])->name('fmenu');
+Route::get('/fjenismenu', [App\Http\Controllers\front\FrontJenisMenuController::class, 'index'])->name('fjenismenu');
 
 Route::get('/products', [ProductContoller::class, 'product_list'])->name('products');
 Route::post('/products/cart/add', [App\Http\Controllers\CartController::class, 'add_cart'])->name('add_cart');
