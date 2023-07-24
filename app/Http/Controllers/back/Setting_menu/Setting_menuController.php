@@ -46,9 +46,9 @@
             {
                
                     
-               
-            
                 $input = $request->all();
+                
+                
                 $Setting_menu = Setting_menu::create($input);
                
             
@@ -101,9 +101,12 @@
                 
                    
                         
-                  
+                        
 
                     $input = $request->all();
+
+                    
+                    
                     
                     $Setting_menu = Setting_menu::find($id);
                     $Setting_menu->update($input);

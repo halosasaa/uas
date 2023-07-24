@@ -1,13 +1,13 @@
 <?php
-        namespace App\Http\Controllers\Back\Pustakawan;
+        namespace App\Http\Controllers\Back\Jenis_menu;
         use Illuminate\Http\Request;
         use App\Http\Controllers\Controller;
-        use App\Models\Pustakawan;
+        use App\Models\Jenis_menu;
         use DB;
         use Hash;
         use Illuminate\Support\Arr;
 
-        class PustakawanController extends Controller
+        class Jenis_menuController extends Controller
         {
             /**
              * Display a listing of the resource.
@@ -17,8 +17,8 @@
         
             public function index(Request $request)
             {
-                $data = Pustakawan::orderBy("id","DESC")->get();
-                return view("back.Pustakawan.index",compact("data"))
+                $data = Jenis_menu::orderBy("id","DESC")->get();
+                return view("back.Jenis_menu.index",compact("data"))
                     ->with("i", ($request->input("page", 1) - 1) * 5);
             }
         
@@ -30,7 +30,7 @@
         
             public function create()
             {
-                return view("back.Pustakawan.create");
+                return view("back.Jenis_menu.create");
             }
         
         
@@ -49,11 +49,11 @@
                 $input = $request->all();
                 
                 
-                $Pustakawan = Pustakawan::create($input);
+                $Jenis_menu = Jenis_menu::create($input);
                
             
-                return redirect()->route("pustakawan.index")
-                ->with("success","Pustakawan created successfully");
+                return redirect()->route("jenis_menu.index")
+                ->with("success","Jenis_menu created successfully");
             
             }
         
@@ -67,8 +67,8 @@
         
                 public function show($id)
                 {
-                    $Pustakawan = Pustakawan::find($id);
-                    return view("back.Pustakawan.show",compact("Pustakawan"));
+                    $Jenis_menu = Jenis_menu::find($id);
+                    return view("back.Jenis_menu.show",compact("Jenis_menu"));
                 }
             
 
@@ -82,8 +82,8 @@
             
                 public function edit($id)
                 {
-                    $Pustakawan = Pustakawan::find($id);
-                    return view("back.Pustakawan.edit",compact("Pustakawan"));
+                    $Jenis_menu = Jenis_menu::find($id);
+                    return view("back.Jenis_menu.edit",compact("Jenis_menu"));
                 }
             
 
@@ -108,11 +108,11 @@
                     
                     
                     
-                    $Pustakawan = Pustakawan::find($id);
-                    $Pustakawan->update($input);
+                    $Jenis_menu = Jenis_menu::find($id);
+                    $Jenis_menu->update($input);
                 
-                    return redirect()->route("pustakawan.index")
-                    ->with("success","Pustakawan updated successfully");
+                    return redirect()->route("jenis_menu.index")
+                    ->with("success","Jenis_menu updated successfully");
                 
                 }
             
@@ -126,9 +126,9 @@
             
                 public function destroy($id)
                 {
-                    Pustakawan::find($id)->delete();
-                    return redirect()->route("pustakawan.index")
-                    ->with("success","Pustakawan deleted successfully");
+                    Jenis_menu::find($id)->delete();
+                    return redirect()->route("jenis_menu.index")
+                    ->with("success","Jenis_menu deleted successfully");
                 
                 }
             }

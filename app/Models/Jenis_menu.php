@@ -17,12 +17,12 @@
             use Illuminate\Database\Eloquent\Factories\HasFactory;
             use Illuminate\Database\Eloquent\Model;
             
-            class Kategori_buku extends Model
+            class Jenis_menu extends Model
             {
                 use HasFactory;
-                protected $table = "kategori_buku";
+                protected $table = "jenis_menu";
                 protected $fillable = [
-                    "nama_kategori",
+                    "nama_jenis",
 "deleted",
 
                 ];

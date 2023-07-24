@@ -29,7 +29,7 @@
 "menu_parent",
 "menu_icon",
 "type",
-"order",
+"ord",
 "extensiontarget",
 "status",
 "deleted",

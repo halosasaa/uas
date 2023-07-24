@@ -1,15 +1,13 @@
 <?php
-        namespace App\Http\Controllers\Back\Buku;
+        namespace App\Http\Controllers\Back\Pembeli;
         use Illuminate\Http\Request;
         use App\Http\Controllers\Controller;
-        use App\Models\Buku;
-        use App\Models\Kategori_buku;
-        
+        use App\Models\Pembeli;
         use DB;
         use Hash;
         use Illuminate\Support\Arr;
 
-        class BukuController extends Controller
+        class PembeliController extends Controller
         {
             /**
              * Display a listing of the resource.
@@ -19,10 +17,8 @@
         
             public function index(Request $request)
             {
-                $data = Buku::orderBy("id","DESC")->get();
-                $res_kategori_buku = DB::select('select * from kategori_buku');
-
-                return view("back.Buku.index",compact("data","res_kategori_buku"))
+                $data = Pembeli::orderBy("id","DESC")->get();
+                return view("back.Pembeli.index",compact("data"))
                     ->with("i", ($request->input("page", 1) - 1) * 5);
             }
         
@@ -34,9 +30,7 @@
         
             public function create()
             {
-                $res_kategori_buku = Kategori_buku::orderBy("id","DESC")->get();
-                dd($res_kategori_buku);
-                return view("back.Buku.create");
+                return view("back.Pembeli.create");
             }
         
         
@@ -55,11 +49,11 @@
                 $input = $request->all();
                 
                 
-                $Buku = Buku::create($input);
+                $Pembeli = Pembeli::create($input);
                
             
-                return redirect()->route("buku.index")
-                ->with("success","Buku created successfully");
+                return redirect()->route("pembeli.index")
+                ->with("success","Pembeli created successfully");
             
             }
         
@@ -73,8 +67,8 @@
         
                 public function show($id)
                 {
-                    $Buku = Buku::find($id);
-                    return view("back.Buku.show",compact("Buku"));
+                    $Pembeli = Pembeli::find($id);
+                    return view("back.Pembeli.show",compact("Pembeli"));
                 }
             
 
@@ -88,8 +82,8 @@
             
                 public function edit($id)
                 {
-                    $Buku = Buku::find($id);
-                    return view("back.Buku.edit",compact("Buku"));
+                    $Pembeli = Pembeli::find($id);
+                    return view("back.Pembeli.edit",compact("Pembeli"));
                 }
             
 
@@ -114,11 +108,11 @@
                     
                     
                     
-                    $Buku = Buku::find($id);
-                    $Buku->update($input);
+                    $Pembeli = Pembeli::find($id);
+                    $Pembeli->update($input);
                 
-                    return redirect()->route("buku.index")
-                    ->with("success","Buku updated successfully");
+                    return redirect()->route("pembeli.index")
+                    ->with("success","Pembeli updated successfully");
                 
                 }
             
@@ -132,9 +126,9 @@
             
                 public function destroy($id)
                 {
-                    Buku::find($id)->delete();
-                    return redirect()->route("buku.index")
-                    ->with("success","Buku deleted successfully");
+                    Pembeli::find($id)->delete();
+                    return redirect()->route("pembeli.index")
+                    ->with("success","Pembeli deleted successfully");
                 
                 }
             }

@@ -1,13 +1,13 @@
 <?php
-        namespace App\Http\Controllers\Back\Anggota;
+        namespace App\Http\Controllers\Back\Karyawan;
         use Illuminate\Http\Request;
         use App\Http\Controllers\Controller;
-        use App\Models\Anggota;
+        use App\Models\Karyawan;
         use DB;
         use Hash;
         use Illuminate\Support\Arr;
 
-        class AnggotaController extends Controller
+        class KaryawanController extends Controller
         {
             /**
              * Display a listing of the resource.
@@ -17,8 +17,8 @@
         
             public function index(Request $request)
             {
-                $data = Anggota::orderBy("id","DESC")->get();
-                return view("back.Anggota.index",compact("data"))
+                $data = Karyawan::orderBy("id","DESC")->get();
+                return view("back.Karyawan.index",compact("data"))
                     ->with("i", ($request->input("page", 1) - 1) * 5);
             }
         
@@ -30,7 +30,7 @@
         
             public function create()
             {
-                return view("back.Anggota.create");
+                return view("back.Karyawan.create");
             }
         
         
@@ -49,11 +49,11 @@
                 $input = $request->all();
                 
                 
-                $Anggota = Anggota::create($input);
+                $Karyawan = Karyawan::create($input);
                
             
-                return redirect()->route("anggota.index")
-                ->with("success","Anggota created successfully");
+                return redirect()->route("karyawan.index")
+                ->with("success","Karyawan created successfully");
             
             }
         
@@ -67,8 +67,8 @@
         
                 public function show($id)
                 {
-                    $Anggota = Anggota::find($id);
-                    return view("back.Anggota.show",compact("Anggota"));
+                    $Karyawan = Karyawan::find($id);
+                    return view("back.Karyawan.show",compact("Karyawan"));
                 }
             
 
@@ -82,8 +82,8 @@
             
                 public function edit($id)
                 {
-                    $Anggota = Anggota::find($id);
-                    return view("back.Anggota.edit",compact("Anggota"));
+                    $Karyawan = Karyawan::find($id);
+                    return view("back.Karyawan.edit",compact("Karyawan"));
                 }
             
 
@@ -108,11 +108,11 @@
                     
                     
                     
-                    $Anggota = Anggota::find($id);
-                    $Anggota->update($input);
+                    $Karyawan = Karyawan::find($id);
+                    $Karyawan->update($input);
                 
-                    return redirect()->route("anggota.index")
-                    ->with("success","Anggota updated successfully");
+                    return redirect()->route("karyawan.index")
+                    ->with("success","Karyawan updated successfully");
                 
                 }
             
@@ -126,9 +126,9 @@
             
                 public function destroy($id)
                 {
-                    Anggota::find($id)->delete();
-                    return redirect()->route("anggota.index")
-                    ->with("success","Anggota deleted successfully");
+                    Karyawan::find($id)->delete();
+                    return redirect()->route("karyawan.index")
+                    ->with("success","Karyawan deleted successfully");
                 
                 }
             }

@@ -17,16 +17,17 @@
             use Illuminate\Database\Eloquent\Factories\HasFactory;
             use Illuminate\Database\Eloquent\Model;
             
-            class Anggota extends Model
+            class Menu extends Model
             {
                 use HasFactory;
-                protected $table = "anggota";
+                protected $table = "menu";
                 protected $fillable = [
-                    "nama_anggota",
-"alamat_anggota",
-"nomor_telp",
-"jenis_kelamin_anggota",
+                    "id_jenis",
+"nama_menu",
+"stok_menu",
 "deleted",
+"harga",
+"gambar",
 
                 ];
             }

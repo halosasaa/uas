@@ -17,18 +17,15 @@
             use Illuminate\Database\Eloquent\Factories\HasFactory;
             use Illuminate\Database\Eloquent\Model;
             
-            class Buku extends Model
+            class Pembeli extends Model
             {
                 use HasFactory;
-                protected $table = "buku";
+                protected $table = "pembeli";
                 protected $fillable = [
-                    "id_kategori",
-"judul_buku",
-"penulis",
-"dipinjam",
-"penerbit",
-"tahun_terbit",
-"jumlah_buku",
+                    "nama_pembeli",
+"alamat_pembeli",
+"nomor_telp",
+"jenis_kelamin_pembeli",
 "deleted",
 
                 ];

@@ -9,7 +9,7 @@
                   <div class="card">
                       <div class="card-body">
                           @can("product-create")
-                              <a class="btn btn-success" href="{{ route("peminjaman.create") }}"> Create New Peminjaman</a>
+                              <a class="btn btn-success" href="{{ route("jenis_menu.create") }}"> Create New Jenis_menu</a>
                           @endcan
         
                       </div>
@@ -28,7 +28,7 @@
                   <!--begin::Page title-->
                   <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">PEMINJAMAN LIST</h1>
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">JENIS MENU LIST</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -43,7 +43,7 @@
                       </li>
                       <!--end::Item-->
                       <!--begin::Item-->
-                      <li class="breadcrumb-item text-muted">PEMINJAMAN</li>
+                      <li class="breadcrumb-item text-muted">JENIS MENU</li>
                       <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -142,8 +142,8 @@
                     <!--end::Secondary button-->
                     <!--begin::Primary button-->
                     {{-- <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a> --}}
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Peminjaman">
-                      <i class="ki-duotone ki-plus "></i>Add PEMINJAMAN</button>
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Jenis_menu">
+                      <i class="ki-duotone ki-plus "></i>Add JENIS MENU</button>
                     <!--end::Primary button-->
                   </div>
                   <!--end::Actions-->
@@ -153,18 +153,18 @@
               <!--end::Toolbar-->
         
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
-              <div class="modal fade" id="kt_modal_add_Peminjaman" tabindex="-1" aria-hidden="true">
+              <div class="modal fade" id="kt_modal_add_Jenis_menu" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_Peminjaman_header">
+                    <div class="modal-header" id="kt_modal_add_Jenis_menu_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">ADD PEMINJAMAN</h2>
+                      <h2 class="fw-bold">ADD JENIS MENU</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Peminjamans-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Jenis_menus-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -176,34 +176,23 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {!! Form::open(array("route" => "peminjaman.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
-                      {{-- <form id="kt_modal_add_Peminjaman_form" class="form" action="#"> --}}
+                      {!! Form::open(array("route" => "jenis_menu.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+                      {{-- <form id="kt_modal_add_Jenis_menu_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
-                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Peminjaman_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Peminjaman_header" data-kt-scroll-wrappers="#kt_modal_add_Peminjaman_scroll" data-kt-scroll-offset="300px">
+                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Jenis_menu_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Jenis_menu_header" data-kt-scroll-wrappers="#kt_modal_add_Jenis_menu_scroll" data-kt-scroll-offset="300px">
                          
                           
-                <!--begin::Input group-->
-                <div class="fv-row mb-7">
-                  <!--begin::Label-->
-                  <label class=" fw-semibold fs-6 mb-2">ID ANGGOTA</label>
-                  <!--end::Label-->
-                  <!--begin::Input-->
-                  <input type="number" name="id_anggota" class="form-control form-control-sm form-control-solid" placeholder="id_anggota"  />
-                  <!--end::Input-->
-                </div>
-                <!--end::Input group-->
-                
-                <!--begin::Input group-->
-                <div class="fv-row mb-7">
-                  <!--begin::Label-->
-                  <label class=" fw-semibold fs-6 mb-2">ID BUKU</label>
-                  <!--end::Label-->
-                  <!--begin::Input-->
-                  <input type="number" name="id_buku" class="form-control form-control-sm form-control-solid" placeholder="id_buku"  />
-                  <!--end::Input-->
-                </div>
-                <!--end::Input group-->
-                
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">NAMA JENIS</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("nama_jenis", null, array("placeholder" => "NAMA JENIS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
@@ -222,8 +211,8 @@
                         <!--end::Scroll-->
                         <!--begin::Actions-->
                         <div class="text-center pt-15">
-                          <button type="reset" class="btn btn-light me-3" data-kt-Peminjaman-modal-action="cancel">Discard</button>
-                          <button type="submit" class="btn btn-primary" data-kt-Peminjaman-modal-action="submit">
+                          <button type="reset" class="btn btn-light me-3" data-kt-Jenis_menu-modal-action="cancel">Discard</button>
+                          <button type="submit" class="btn btn-primary" data-kt-Jenis_menu-modal-action="submit">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
                             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -239,22 +228,22 @@
                 </div>
                 <!--end::Modal dialog-->
               </div>
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Peminjaman-->
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Jenis_menu-->
       
-              @foreach ($data as $key => $peminjaman)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Peminjaman-->
-              <div class="modal fade" id="kt_modal_edit_peminjaman{{ $peminjaman->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $jenis_menu)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Jenis_menu-->
+              <div class="modal fade" id="kt_modal_edit_jenis_menu{{ $jenis_menu->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_peminjaman_header">
+                    <div class="modal-header" id="kt_modal_add_jenis_menu_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">EDIT PEMINJAMAN</h2>
+                      <h2 class="fw-bold">EDIT JENIS MENU</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-peminjamans-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-jenis_menus-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -266,12 +255,23 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "peminjaman.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($peminjaman, ["method" => "PATCH","route" => ["peminjaman.update", $peminjaman->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "jenis_menu.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($jenis_menu, ["method" => "PATCH","route" => ["jenis_menu.update", $jenis_menu->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
                         
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">NAMA JENIS</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("nama_jenis", $jenis_menu->nama_jenis, array("placeholder" => "NAMA JENIS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
@@ -309,20 +309,20 @@
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - Edit user-->
               @endforeach
 
-              @foreach ($data as $key => $peminjaman)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowPeminjaman-->
-              <div class="modal fade" id="kt_modal_show_peminjaman{{ $peminjaman->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $jenis_menu)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowJenis_menu-->
+              <div class="modal fade" id="kt_modal_show_jenis_menu{{ $jenis_menu->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_peminjaman_header">
+                    <div class="modal-header" id="kt_modal_add_jenis_menu_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">DETAIL PEMINJAMAN</h2>
+                      <h2 class="fw-bold">DETAIL JENIS MENU</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-peminjamans-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-jenis_menus-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -334,8 +334,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "peminjaman.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($peminjaman, ["method" => "PATCH","route" => ["peminjaman.update", $peminjaman->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "jenis_menu.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($jenis_menu, ["method" => "PATCH","route" => ["jenis_menu.update", $jenis_menu->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -346,7 +346,7 @@
                 <label class=" fw-semibold fs-6 mb-2">ID</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$peminjaman->id}}" />
+                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$jenis_menu->id}}" />
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -354,21 +354,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID ANGGOTA</label>
+                <label class=" fw-semibold fs-6 mb-2">NAMA JENIS</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="number" name="id_anggota" class="form-control form-control-sm form-control-solid" placeholder="id_anggota" value="{{$peminjaman->id_anggota}}" />
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID BUKU</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                <input type="number" name="id_buku" class="form-control form-control-sm form-control-solid" placeholder="id_buku" value="{{$peminjaman->id_buku}}" />
+                {!! Form::text("nama_jenis", $jenis_menu->nama_jenis, array("placeholder" => "NAMA JENIS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -425,15 +414,15 @@
                               <thead>
                                   <tr>
                                       <th class="min-w-50px sorting">NO</th>                             
-      <th class="min-w-125px sorting">Id Anggota</th><th class="min-w-125px sorting">Id Buku</th><th class="min-w-125px sorting">Tanggal Peminjaman</th><th class="min-w-125px sorting">Tanggal Pengembalian</th><th class="text-center min-w-100px sorting_disabled">Action</th>
+      <th class="min-w-125px sorting">Nama Jenis</th><th class="min-w-125px sorting">Deleted</th><th class="text-center min-w-100px sorting_disabled">Action</th>
            
             </tr>
           </thead>
           <tbody>
-            @foreach ($data as $key => $peminjaman)
+            @foreach ($data as $key => $jenis_menu)
                 <tr>
-                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("peminjaman.show",$peminjaman->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
-                    <td><a href="{{ route("peminjaman.show",$peminjaman->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($peminjaman->id_anggota,25) }}</a></td><td><a href="{{ route("peminjaman.show",$peminjaman->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($peminjaman->id_buku,25) }}</a></td><td><a href="{{ route("peminjaman.show",$peminjaman->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($peminjaman->tanggal_peminjaman,25) }}</a></td><td><a href="{{ route("peminjaman.show",$peminjaman->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($peminjaman->tanggal_pengembalian,25) }}</a></td>
+                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("jenis_menu.show",$jenis_menu->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
+                    <td><a href="{{ route("jenis_menu.show",$jenis_menu->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($jenis_menu->nama_jenis,25) }}</a></td><td><a href="{{ route("jenis_menu.show",$jenis_menu->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($jenis_menu->deleted,25) }}</a></td>
       <td class="text-end">
               <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
@@ -441,19 +430,19 @@
                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_peminjaman{{ $peminjaman->id }}">Show</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_jenis_menu{{ $jenis_menu->id }}">Show</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_peminjaman{{ $peminjaman->id }}">Edit</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_jenis_menu{{ $jenis_menu->id }}">Edit</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["peminjaman.destroy", $peminjaman->id],"style"=>"display:inline"]) !!}
+                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["jenis_menu.destroy", $jenis_menu->id],"style"=>"display:inline"]) !!}
                     {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
-                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-peminjamans-table-filter="delete_row"> Delete</a>
+                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-jenis_menus-table-filter="delete_row"> Delete</a>
                     {!! Form::close() !!} 
                   
                   </div>

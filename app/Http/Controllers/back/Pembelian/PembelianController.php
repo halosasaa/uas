@@ -1,13 +1,13 @@
 <?php
-        namespace App\Http\Controllers\Back\Peminjaman;
+        namespace App\Http\Controllers\Back\Pembelian;
         use Illuminate\Http\Request;
         use App\Http\Controllers\Controller;
-        use App\Models\Peminjaman;
+        use App\Models\Pembelian;
         use DB;
         use Hash;
         use Illuminate\Support\Arr;
 
-        class PeminjamanController extends Controller
+        class PembelianController extends Controller
         {
             /**
              * Display a listing of the resource.
@@ -17,8 +17,8 @@
         
             public function index(Request $request)
             {
-                $data = Peminjaman::orderBy("id","DESC")->get();
-                return view("back.Peminjaman.index",compact("data"))
+                $data = Pembelian::orderBy("id","DESC")->get();
+                return view("back.Pembelian.index",compact("data"))
                     ->with("i", ($request->input("page", 1) - 1) * 5);
             }
         
@@ -30,7 +30,7 @@
         
             public function create()
             {
-                return view("back.Peminjaman.create");
+                return view("back.Pembelian.create");
             }
         
         
@@ -49,11 +49,11 @@
                 $input = $request->all();
                 
                 
-                $Peminjaman = Peminjaman::create($input);
+                $Pembelian = Pembelian::create($input);
                
             
-                return redirect()->route("peminjaman.index")
-                ->with("success","Peminjaman created successfully");
+                return redirect()->route("pembelian.index")
+                ->with("success","Pembelian created successfully");
             
             }
         
@@ -67,8 +67,8 @@
         
                 public function show($id)
                 {
-                    $Peminjaman = Peminjaman::find($id);
-                    return view("back.Peminjaman.show",compact("Peminjaman"));
+                    $Pembelian = Pembelian::find($id);
+                    return view("back.Pembelian.show",compact("Pembelian"));
                 }
             
 
@@ -82,8 +82,8 @@
             
                 public function edit($id)
                 {
-                    $Peminjaman = Peminjaman::find($id);
-                    return view("back.Peminjaman.edit",compact("Peminjaman"));
+                    $Pembelian = Pembelian::find($id);
+                    return view("back.Pembelian.edit",compact("Pembelian"));
                 }
             
 
@@ -108,11 +108,11 @@
                     
                     
                     
-                    $Peminjaman = Peminjaman::find($id);
-                    $Peminjaman->update($input);
+                    $Pembelian = Pembelian::find($id);
+                    $Pembelian->update($input);
                 
-                    return redirect()->route("peminjaman.index")
-                    ->with("success","Peminjaman updated successfully");
+                    return redirect()->route("pembelian.index")
+                    ->with("success","Pembelian updated successfully");
                 
                 }
             
@@ -126,9 +126,9 @@
             
                 public function destroy($id)
                 {
-                    Peminjaman::find($id)->delete();
-                    return redirect()->route("peminjaman.index")
-                    ->with("success","Peminjaman deleted successfully");
+                    Pembelian::find($id)->delete();
+                    return redirect()->route("pembelian.index")
+                    ->with("success","Pembelian deleted successfully");
                 
                 }
             }

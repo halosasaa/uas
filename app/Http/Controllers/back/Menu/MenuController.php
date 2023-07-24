@@ -1,13 +1,13 @@
 <?php
-        namespace App\Http\Controllers\Back\Kategori_buku;
+        namespace App\Http\Controllers\Back\Menu;
         use Illuminate\Http\Request;
         use App\Http\Controllers\Controller;
-        use App\Models\Kategori_buku;
+        use App\Models\Menu;
         use DB;
         use Hash;
         use Illuminate\Support\Arr;
 
-        class Kategori_bukuController extends Controller
+        class MenuController extends Controller
         {
             /**
              * Display a listing of the resource.
@@ -17,8 +17,8 @@
         
             public function index(Request $request)
             {
-                $data = Kategori_buku::orderBy("id","DESC")->get();
-                return view("back.Kategori_buku.index",compact("data"))
+                $data = Menu::orderBy("id","DESC")->get();
+                return view("back.Menu.index",compact("data"))
                     ->with("i", ($request->input("page", 1) - 1) * 5);
             }
         
@@ -30,7 +30,7 @@
         
             public function create()
             {
-                return view("back.Kategori_buku.create");
+                return view("back.Menu.create");
             }
         
         
@@ -49,11 +49,11 @@
                 $input = $request->all();
                 
                 
-                $Kategori_buku = Kategori_buku::create($input);
+                $Menu = Menu::create($input);
                
             
-                return redirect()->route("kategori_buku.index")
-                ->with("success","Kategori_buku created successfully");
+                return redirect()->route("menu.index")
+                ->with("success","Menu created successfully");
             
             }
         
@@ -67,8 +67,8 @@
         
                 public function show($id)
                 {
-                    $Kategori_buku = Kategori_buku::find($id);
-                    return view("back.Kategori_buku.show",compact("Kategori_buku"));
+                    $Menu = Menu::find($id);
+                    return view("back.Menu.show",compact("Menu"));
                 }
             
 
@@ -82,8 +82,8 @@
             
                 public function edit($id)
                 {
-                    $Kategori_buku = Kategori_buku::find($id);
-                    return view("back.Kategori_buku.edit",compact("Kategori_buku"));
+                    $Menu = Menu::find($id);
+                    return view("back.Menu.edit",compact("Menu"));
                 }
             
 
@@ -108,11 +108,11 @@
                     
                     
                     
-                    $Kategori_buku = Kategori_buku::find($id);
-                    $Kategori_buku->update($input);
+                    $Menu = Menu::find($id);
+                    $Menu->update($input);
                 
-                    return redirect()->route("kategori_buku.index")
-                    ->with("success","Kategori_buku updated successfully");
+                    return redirect()->route("menu.index")
+                    ->with("success","Menu updated successfully");
                 
                 }
             
@@ -126,9 +126,9 @@
             
                 public function destroy($id)
                 {
-                    Kategori_buku::find($id)->delete();
-                    return redirect()->route("kategori_buku.index")
-                    ->with("success","Kategori_buku deleted successfully");
+                    Menu::find($id)->delete();
+                    return redirect()->route("menu.index")
+                    ->with("success","Menu deleted successfully");
                 
                 }
             }

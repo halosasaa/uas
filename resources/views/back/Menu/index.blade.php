@@ -9,7 +9,7 @@
                   <div class="card">
                       <div class="card-body">
                           @can("product-create")
-                              <a class="btn btn-success" href="{{ route("kategori_buku.create") }}"> Create New Kategori_buku</a>
+                              <a class="btn btn-success" href="{{ route("menu.create") }}"> Create New Menu</a>
                           @endcan
         
                       </div>
@@ -28,7 +28,7 @@
                   <!--begin::Page title-->
                   <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">KATEGORI BUKU LIST</h1>
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">MENU LIST</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -43,7 +43,7 @@
                       </li>
                       <!--end::Item-->
                       <!--begin::Item-->
-                      <li class="breadcrumb-item text-muted">KATEGORI BUKU</li>
+                      <li class="breadcrumb-item text-muted">MENU</li>
                       <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -142,8 +142,8 @@
                     <!--end::Secondary button-->
                     <!--begin::Primary button-->
                     {{-- <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a> --}}
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Kategori_buku">
-                      <i class="ki-duotone ki-plus "></i>Add KATEGORI BUKU</button>
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Menu">
+                      <i class="ki-duotone ki-plus "></i>Add MENU</button>
                     <!--end::Primary button-->
                   </div>
                   <!--end::Actions-->
@@ -153,18 +153,18 @@
               <!--end::Toolbar-->
         
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
-              <div class="modal fade" id="kt_modal_add_Kategori_buku" tabindex="-1" aria-hidden="true">
+              <div class="modal fade" id="kt_modal_add_Menu" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_Kategori_buku_header">
+                    <div class="modal-header" id="kt_modal_add_Menu_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">ADD KATEGORI BUKU</h2>
+                      <h2 class="fw-bold">ADD MENU</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Kategori_bukus-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Menus-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -176,23 +176,45 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {!! Form::open(array("route" => "kategori_buku.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
-                      {{-- <form id="kt_modal_add_Kategori_buku_form" class="form" action="#"> --}}
+                      {!! Form::open(array("route" => "menu.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+                      {{-- <form id="kt_modal_add_Menu_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
-                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Kategori_buku_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Kategori_buku_header" data-kt-scroll-wrappers="#kt_modal_add_Kategori_buku_scroll" data-kt-scroll-offset="300px">
+                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Menu_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Menu_header" data-kt-scroll-wrappers="#kt_modal_add_Menu_scroll" data-kt-scroll-offset="300px">
                          
                           
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                  <!--begin::Label-->
+                  <label class=" fw-semibold fs-6 mb-2">ID JENIS</label>
+                  <!--end::Label-->
+                  <!--begin::Input-->
+                  <input type="number" name="id_jenis" class="form-control form-control-sm form-control-solid" placeholder="id_jenis"  />
+                  <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+                
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA KATEGORI</label>
+                <label class=" fw-semibold fs-6 mb-2">NAMA MENU</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama_kategori", null, array("placeholder" => "NAMA KATEGORI","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("nama_menu", null, array("placeholder" => "NAMA MENU","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
               
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                  <!--begin::Label-->
+                  <label class=" fw-semibold fs-6 mb-2">STOK MENU</label>
+                  <!--end::Label-->
+                  <!--begin::Input-->
+                  <input type="number" name="stok_menu" class="form-control form-control-sm form-control-solid" placeholder="stok_menu"  />
+                  <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+                
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
@@ -206,13 +228,35 @@
               </div>
               <!--end::Input group-->
               
+                <!--begin::Input group-->
+                <div class="fv-row mb-7">
+                  <!--begin::Label-->
+                  <label class=" fw-semibold fs-6 mb-2">HARGA</label>
+                  <!--end::Label-->
+                  <!--begin::Input-->
+                  <input type="number" name="harga" class="form-control form-control-sm form-control-solid" placeholder="harga"  />
+                  <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+                
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">GAMBAR</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("gambar", null, array("placeholder" => "GAMBAR","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
                          
                         </div>
                         <!--end::Scroll-->
                         <!--begin::Actions-->
                         <div class="text-center pt-15">
-                          <button type="reset" class="btn btn-light me-3" data-kt-Kategori_buku-modal-action="cancel">Discard</button>
-                          <button type="submit" class="btn btn-primary" data-kt-Kategori_buku-modal-action="submit">
+                          <button type="reset" class="btn btn-light me-3" data-kt-Menu-modal-action="cancel">Discard</button>
+                          <button type="submit" class="btn btn-primary" data-kt-Menu-modal-action="submit">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
                             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -228,22 +272,22 @@
                 </div>
                 <!--end::Modal dialog-->
               </div>
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Kategori_buku-->
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Menu-->
       
-              @foreach ($data as $key => $kategori_buku)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Kategori_buku-->
-              <div class="modal fade" id="kt_modal_edit_kategori_buku{{ $kategori_buku->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $menu)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Menu-->
+              <div class="modal fade" id="kt_modal_edit_menu{{ $menu->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_kategori_buku_header">
+                    <div class="modal-header" id="kt_modal_add_menu_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">EDIT KATEGORI BUKU</h2>
+                      <h2 class="fw-bold">EDIT MENU</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-kategori_bukus-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-menus-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -255,8 +299,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "kategori_buku.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($kategori_buku, ["method" => "PATCH","route" => ["kategori_buku.update", $kategori_buku->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "menu.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($menu, ["method" => "PATCH","route" => ["menu.update", $menu->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -264,10 +308,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA KATEGORI</label>
+                <label class=" fw-semibold fs-6 mb-2">NAMA MENU</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama_kategori", $kategori_buku->nama_kategori, array("placeholder" => "NAMA KATEGORI","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("nama_menu", $menu->nama_menu, array("placeholder" => "NAMA MENU","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -281,6 +325,17 @@
                 <select name="deleted" aria-label="Select a deleted" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
 														<option value='false'>false</option><option value='true'>true</option><option value=''></option>
 								</select>
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">GAMBAR</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("gambar", $menu->gambar, array("placeholder" => "GAMBAR","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -309,20 +364,20 @@
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - Edit user-->
               @endforeach
 
-              @foreach ($data as $key => $kategori_buku)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowKategori_buku-->
-              <div class="modal fade" id="kt_modal_show_kategori_buku{{ $kategori_buku->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $menu)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowMenu-->
+              <div class="modal fade" id="kt_modal_show_menu{{ $menu->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_kategori_buku_header">
+                    <div class="modal-header" id="kt_modal_add_menu_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">DETAIL KATEGORI BUKU</h2>
+                      <h2 class="fw-bold">DETAIL MENU</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-kategori_bukus-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-menus-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -334,8 +389,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "kategori_buku.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($kategori_buku, ["method" => "PATCH","route" => ["kategori_buku.update", $kategori_buku->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "menu.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($menu, ["method" => "PATCH","route" => ["menu.update", $menu->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -346,7 +401,7 @@
                 <label class=" fw-semibold fs-6 mb-2">ID</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$kategori_buku->id}}" />
+                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$menu->id}}" />
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -354,10 +409,32 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA KATEGORI</label>
+                <label class=" fw-semibold fs-6 mb-2">ID JENIS</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama_kategori", $kategori_buku->nama_kategori, array("placeholder" => "NAMA KATEGORI","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <input type="number" name="id_jenis" class="form-control form-control-sm form-control-solid" placeholder="id_jenis" value="{{$menu->id_jenis}}" />
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">NAMA MENU</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("nama_menu", $menu->nama_menu, array("placeholder" => "NAMA MENU","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">STOK MENU</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <input type="number" name="stok_menu" class="form-control form-control-sm form-control-solid" placeholder="stok_menu" value="{{$menu->stok_menu}}" />
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -371,6 +448,28 @@
                 <select name="deleted" aria-label="Select a deleted" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
 														<option value='false'>false</option><option value='true'>true</option><option value=''></option>
 								</select>
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">HARGA</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <input type="number" name="harga" class="form-control form-control-sm form-control-solid" placeholder="harga" value="{{$menu->harga}}" />
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">GAMBAR</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("gambar", $menu->gambar, array("placeholder" => "GAMBAR","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -414,44 +513,15 @@
                               <thead>
                                   <tr>
                                       <th class="min-w-50px sorting">NO</th>                             
-      <th class="min-w-125px sorting">Action</th><th class="min-w-125px sorting">Nama Kategori</th><th class="text-center min-w-100px sorting_disabled">Action</th>
+      <th class="min-w-125px sorting">Nama Menu</th><th class="min-w-125px sorting">Deleted</th><th class="min-w-125px sorting">Gambar</th><th class="text-center min-w-100px sorting_disabled">Action</th>
            
             </tr>
           </thead>
           <tbody>
-            @foreach ($data as $key => $kategori_buku)
+            @foreach ($data as $key => $menu)
                 <tr>
-                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("kategori_buku.show",$kategori_buku->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
-                    
-                <td>
-                        <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                          <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
-                          <!--begin::Menu-->
-                          <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                              <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_kategori_buku{{ $kategori_buku->id }}">Show</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                              <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_kategori_buku{{ $kategori_buku->id }}">Edit</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                              {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["kategori_buku.destroy", $kategori_buku->id],"style"=>"display:inline"]) !!}
-                              {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
-                              <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-kategori_bukus-table-filter="delete_row"> Delete</a>
-                              {!! Form::close() !!} 
-                            
-                            </div>
-                            <!--end::Menu item-->
-                          </div>
-                          <!--end::Menu-->
-  
-                      </td>
-                <td><a href="{{ route("kategori_buku.show",$kategori_buku->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($kategori_buku->nama_kategori,25) }}</a></td>
+                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("menu.show",$menu->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
+                    <td><a href="{{ route("menu.show",$menu->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($menu->nama_menu,25) }}</a></td><td><a href="{{ route("menu.show",$menu->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($menu->deleted,25) }}</a></td><td><a href="{{ route("menu.show",$menu->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($menu->gambar,25) }}</a></td>
       <td class="text-end">
               <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
@@ -459,19 +529,19 @@
                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_kategori_buku{{ $kategori_buku->id }}">Show</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_menu{{ $menu->id }}">Show</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_kategori_buku{{ $kategori_buku->id }}">Edit</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_menu{{ $menu->id }}">Edit</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["kategori_buku.destroy", $kategori_buku->id],"style"=>"display:inline"]) !!}
+                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["menu.destroy", $menu->id],"style"=>"display:inline"]) !!}
                     {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
-                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-kategori_bukus-table-filter="delete_row"> Delete</a>
+                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-menus-table-filter="delete_row"> Delete</a>
                     {!! Form::close() !!} 
                   
                   </div>

@@ -17,14 +17,14 @@
             use Illuminate\Database\Eloquent\Factories\HasFactory;
             use Illuminate\Database\Eloquent\Model;
             
-            class Pustakawan extends Model
+            class Pembelian extends Model
             {
                 use HasFactory;
-                protected $table = "pustakawan";
+                protected $table = "pembelian";
                 protected $fillable = [
-                    "nama_pustakawan",
-"alamat_pustakawan",
-"jenis_kelamin_pustakawan",
+                    "id_pembeli",
+"id_menu",
+"tanggal_pembelian",
 "deleted",
 
                 ];
