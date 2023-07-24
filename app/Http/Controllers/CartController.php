@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Buku;
-use App\Models\Kategori_buku; 
+use App\Models\Menu;
+use App\Models\Jenis_menu;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 
 class CartController extends Controller
@@ -25,8 +25,8 @@ class CartController extends Controller
         $cartItems = \Cart::getContent(); 
         dump($cartItems); 
         
-        $buku = Buku::all();
-        $kategori_buku = Kategori_buku::all();
+        $menu = Menu::all();
+        $jenis_menu = Jenis_menu::all();
         return back();
     }
 
@@ -44,10 +44,10 @@ class CartController extends Controller
 
     public function view_cart()
     {
-        $buku = Buku::all();
-        $kategori_buku = Kategori_buku::all();
+        $menu = Menu::all();
+        $jenis_menu = Jenis_menu::all();
         $carts = Cart::getContent();
-        return view('front.cart', compact('buku', 'kategori_buku','carts'));
+        return view('front.cart', compact('menu', 'jenis_menu','carts'));
     }
 
     public function remove_item($id){

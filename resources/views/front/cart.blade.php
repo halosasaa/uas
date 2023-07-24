@@ -3,7 +3,7 @@
 @section('konten')
 
 <div class="container-fluid pt-5 pb-3">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Buku</span></h2>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Cart</span></h2>
     <div class="row px-xl-5">
         <table class="table table-striped table-bordered table-hover">
             <thead>
@@ -21,13 +21,13 @@
                         <img src="{{ asset('images/'.$cart->attributes->image) }}" class="w-full h-40" width="200" height="200">
                         </td>
                         <td class="text-center">{{ $cart->name }}</td>
-                        <td class="text-center"> Jumlah Barang = {{ $cart->quantity }}
+                        <td class="text-center"> Jumlah Menu = {{ $cart->quantity }}
                             <form method="POST" action="{{ route('update-cart') }}" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $cart->id }}">
                                 <input type="number" id="quantity" name="quantity" min="1"
                                     value="1" class="rounded w-3/5 my-1">
-                                <button class="bg-cyan-900 w-3/5 py-2 text-dark rounded">Tambah Barang</button>
+                                <button class="bg-cyan-900 w-3/5 py-2 text-dark rounded">Tambah Menu</button>
                             </form>
 
                         </td>

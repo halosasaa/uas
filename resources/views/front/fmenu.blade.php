@@ -27,8 +27,14 @@
                             <h5>Rp.{{$item->harga}}</h5>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
-                           
-                            <a class='btn btn-primary' href="{{url('addtocart'.'?id='.$item->id)}}">add to cart</a>
+                        <form method="POST" action="{{ route('add_cart') }}" enctype="multipart/form-data">
+                                @csrf
+                                <input name="id" value="{{ $item->id }}" hidden>
+                                <input name="name" value="{{ $item->nama_menu }}" hidden>
+                                <input name="price" value="{{ $item->harga }}" hidden>
+                                <input name="image" value="{{ $item->gambar }}" hidden> 
+                                <button class="btn btn-primary">Add To Cart</button>
+                            </form>
                         </div>
                     </div>
                 </div>
